@@ -57,8 +57,8 @@ EOF
         INS="apt"
         ## 添加 Nginx apt源
         if [ ! -f nginx_signing.key ];then
-        echo "deb http://nginx.org/packages/mainline/debian/ ${VERSION} nginx" >> /etc/apt/sources.list
-        echo "deb-src http://nginx.org/packages/mainline/debian/ ${VERSION} nginx" >> /etc/apt/sources.list
+        echo "deb http://nginx.org/packages/debian/ ${VERSION} nginx" >> /etc/apt/sources.list
+        echo "deb-src http://nginx.org/packages/debian/ ${VERSION} nginx" >> /etc/apt/sources.list
         wget -nc https://nginx.org/keys/nginx_signing.key
         apt-key add nginx_signing.key
         fi
@@ -67,8 +67,8 @@ EOF
         INS="apt"
         ## 添加 Nginx apt源
         if [ ! -f nginx_signing.key ];then
-        echo "deb http://nginx.org/packages/mainline/ubuntu/ ${UBUNTU_CODENAME} nginx" >> /etc/apt/sources.list
-        echo "deb-src http://nginx.org/packages/mainline/ubuntu/ ${UBUNTU_CODENAME} nginx" >> /etc/apt/sources.list
+        echo "deb http://nginx.org/packages/ubuntu/ ${UBUNTU_CODENAME} nginx" >> /etc/apt/sources.list
+        echo "deb-src http://nginx.org/packages/ubuntu/ ${UBUNTU_CODENAME} nginx" >> /etc/apt/sources.list
         wget -nc https://nginx.org/keys/nginx_signing.key
         apt-key add nginx_signing.key
         fi
@@ -288,7 +288,7 @@ nginx_conf_add(){
         ssl on;
         ssl_certificate       /etc/v2ray/v2ray.crt;
         ssl_certificate_key   /etc/v2ray/v2ray.key;
-        ssl_protocols         TLSv1 TLSv1.1 TLSv1.2;
+        ssl_protocols         TLSv1.2 TLSv1.3;
         ssl_ciphers           HIGH:!aNULL:!MD5;
         server_name           serveraddr.com;
         index index.html index.htm;
