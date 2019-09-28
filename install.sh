@@ -288,7 +288,7 @@ nginx_conf_add(){
         ssl on;
         ssl_certificate       /etc/v2ray/v2ray.crt;
         ssl_certificate_key   /etc/v2ray/v2ray.key;
-        ssl_protocols         TLSv1.0 TLSv1.1 TLSv1.2;
+        ssl_protocols         TLSv1.1 TLSv1.2;
         ssl_ciphers           HIGH:!aNULL:!MD5;
         server_name           serveraddr.com;
         index index.html index.htm;
